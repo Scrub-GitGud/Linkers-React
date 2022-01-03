@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import AddToFolderModal from './AddToFolderModal'
 import { LinkContext } from './Context/LinkContext'
 import { LinkCard } from './LinkCard'
 import SearchBar from './SearchBar'
@@ -24,6 +25,8 @@ const Dashboard = () => {
             <div className="grid">
                 {links && links.map(link => <LinkCard key={link.id} link={link} setLinkID={setLinkID} setModalOpen={setModalOpen} Vote={Vote}/>)}
             </div>
+
+            {modal_open && <AddToFolderModal link_id={link_id} modal_open={modal_open} setModalOpen={setModalOpen}/>}
         </div>
     )
 }
