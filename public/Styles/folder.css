@@ -1,0 +1,70 @@
+.folder {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    padding: 10px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 7px;
+    cursor: pointer;
+
+
+    /* Stop Text from being selected */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.folder:hover {
+    background-color: #effffa;
+    border: 2px solid #0cc587;
+}
+.folder.active {
+    background-color: #d3fff0;
+    border: 2px solid #1daf7f;
+}
+.folder .icon {
+    font-size: 4rem;
+    color: #1daf7f;
+}
+.red-folder {
+    cursor: not-allowed;
+}
+.red-folder:hover {
+    background-color: #ffd3d3;
+    border: 2px solid #f83838;
+}
+.red-folder.active {
+    background-color: #ffd3d3;
+    border: 2px solid #f83838;
+}
+.red-folder .icon {
+    font-size: 4rem;
+    color: #f83838;
+}
+
+.folder .details {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 10px;
+}
+.folder .name {
+    color: #3d3d3d;
+    font-weight: 600;
+
+}
+.folder .edit_name {
+    color: #3d3d3d;
+    outline: none;
+    padding: 5px;
+    border: none;
+}
+.folder .sub {
+    font-size: 1rem;
+    color: #c7c7c7;
+}

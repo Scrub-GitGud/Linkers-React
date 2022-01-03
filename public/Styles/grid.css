@@ -1,0 +1,126 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-gap: 1rem;
+}
+
+.grid-item {
+    /* padding: 5rem 1rem; */
+    text-align: center;
+    font-size: 1.2rem;
+    background: #1daf7f;
+    color: #ffffff;
+}
+
+
+.link-item {
+    border: 5px solid #1daf7f;
+    overflow: hidden;
+    border-radius: 15px;
+
+    position: relative;
+}
+
+.link-item .img-div {
+    height: 150px;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+.link-item .img-div img {
+    width: 100%;
+}
+
+.link-item .title {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 2px 15px;
+}
+.link-item .details {
+    background-color: white;
+    color: #1daf7f;
+    font-weight: 400;
+    text-align: left;
+    padding: 15px;
+    padding-top: 5px;
+
+    position: relative;
+}
+.link-item .favicon {
+    border: 5px solid white;
+    background-color: #1daf7f;
+    border-radius: 100px;
+    overflow: hidden;
+    height: 70px;
+    width: 70px;
+    
+    position: absolute;
+    top: 4%;
+    left: 83%;
+    transform: translate(-50%, -50%);
+}
+.link-item .favicon img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 30px;
+}
+.link-item .img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.link-item .add_to_folder {
+    position: absolute;
+    top: 8%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+.link-item .add_to_folder:hover {
+    color: #1daf7f;
+}
+
+
+
+.link-item .counts {
+    margin: 10px 0;
+}
+.link-item .tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.badge {
+    background-color: white;
+    border: 2px solid black;
+    border: 2px solid black;
+    color: black;
+    padding: 1px 7px;
+    border-radius: 5px;
+    display: inline;
+    font-size: 15px;
+    margin: 3px;
+    cursor: pointer;
+}
+.badge.active {
+    background-color: black;
+    color: white;
+}
+.badge-red {
+    background-color: #f53c3c;
+}
+
+.offset {
+    width: 80px;
+}

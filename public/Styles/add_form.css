@@ -1,0 +1,91 @@
+
+.add_page {
+
+}
+
+.add_page .title {
+    font-size: 2rem;
+    font-weight: 500;
+    width: 100%;
+    border-bottom: 3px solid #313131;
+    color:#313131;
+
+    margin-bottom: 2rem;
+}
+.add_page .sub-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    width: 100%;
+    border-bottom: 1px solid #313131;
+    color:#313131;
+
+    margin-bottom: 1rem;
+}
+
+
+
+.add_form {
+    width: 700px;
+}
+.input_div {
+    margin-bottom: 2rem;
+}
+.add_form label {
+    font-size: 1.5rem;
+    color:#313131;
+    font-weight: 500;
+}
+.add_form input {
+    display: block;
+    width: 95%;
+    padding: .7rem;
+    outline: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    border: 3px solid#4f46e5;
+}
+
+
+
+
+.add_form button {
+    padding: .8rem 1.5rem;
+    width: 49%;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 7px;
+    border: 3px solid#4f46e5;
+    background-color: white;
+    color: #4f46e5;
+    cursor: pointer;
+}
+.add_form button.active {
+    background-color: #4f46e5;
+    color: white;
+}
+.add_form .submit-btn {
+    background-color: #4f46e5;
+    color: white;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+.btn-group input{
+    flex: 3;
+    border-radius: 6px 0 0 6px;
+    border: 3px solid#4f46e5;
+}
+.btn-group button{
+    flex: 1;
+    border-radius: 0 6px 6px 0;
+    background-color: #4f46e5;
+    color: white;s
+}

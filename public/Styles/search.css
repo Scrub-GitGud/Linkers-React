@@ -1,0 +1,38 @@
+.search_div {
+    width: 50%;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.search_div input {
+    margin: 7px auto;
+    padding: .9rem;
+    border-radius: 15px;
+    border: 4px solid #1daf7f;
+    width: 100%;
+    padding-left: 50px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: none;
+    color: #1daf7f;
+}
+
+.search_div .icon {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translate(-50%, -50%);
+    color: #1daf7f;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .search_div {
+        width: 100%;
+    }
+}

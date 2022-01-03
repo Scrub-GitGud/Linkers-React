@@ -1,0 +1,66 @@
+.auth-page {
+    background-color: #068057;
+    background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
+}
+
+.auth {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: 3px solid white;
+    border-radius: 20px;
+    overflow: hidden;
+
+    background-color: white;
+}
+
+.auth .title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #068057;
+    color: white;
+}
+
+.auth-form {
+    padding: 2rem;
+}
+
+
+.auth-form label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+    color: #068057;
+    margin-bottom: .5rem;
+}
+
+.auth-form input {
+    padding: .7rem;
+    display: block;
+    width: 95%;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #068057;
+    font-size: 18px;
+    margin-bottom: 1rem;
+}
+
+.auth-form button {
+    padding: .7rem;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: #068057;
+    font-size: 18px;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
