@@ -77,16 +77,19 @@
 
 .link-item .add_to_folder {
     position: absolute;
-    top: 8%;
-    left: 95%;
+    top: 7%;
+    left: 90%;
     transform: translate(-50%, -50%);
 
     font-size: 1.5rem;
     font-weight: bold;
 
+    display: flex;
+}
+.link-item .add_to_folder_icon {
     cursor: pointer;
 }
-.link-item .add_to_folder:hover {
+.link-item .add_to_folder_icon:hover {
     color: #1daf7f;
 }
 

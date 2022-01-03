@@ -1,5 +1,5 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 import { LinkCard } from './LinkCard';
 import AddToFolderModal from './AddToFolderModal';
 
@@ -32,6 +32,23 @@ const SingleFolder = (props) => {
         }
     }
 
+    const Vote = async (id, type) => {
+        try {
+            const res = await axios.post('/link/vote', {id, type})
+            console.log(res)
+            if(res.data.success){
+                const updated_links = links.map(link => link.id === res.data.data.id ? res.data.data : link)
+                setLinks(updated_links)
+            } else {
+                console.log(res.data.message)
+                toast.error(res.data.message, { autoClose: 2000, position: toast.POSITION.TOP_CENTER});
+            }
+        } catch(err) {
+            console.log(err)
+            toast.error("Something went wrong.", { autoClose: 2000, position: toast.POSITION.TOP_CENTER});
+        }
+    }
+
     useEffect(() => {
         LoadFolderLinks()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -41,7 +58,7 @@ const SingleFolder = (props) => {
         <div className='container'>
 
             <div className="grid">
-                {links && links.map(link => <LinkCard key={link.id} link={link} setLinkID={setLinkID} setModalOpen={setModalOpen}/>)}
+                {links && links.map(link => <LinkCard key={link.id} link={link} setLinkID={setLinkID} setModalOpen={setModalOpen} Vote={Vote}/>)}
             </div>
 
             {modal_open && <AddToFolderModal link_id={link_id} modal_open={modal_open} setModalOpen={setModalOpen}/>}

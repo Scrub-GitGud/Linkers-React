@@ -1,5 +1,6 @@
 {
   "name": "linkers-react",
+  "homepage": "https://linkers-react.atiar.info/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

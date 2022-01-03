@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import { AiOutlineDollarCircle, AiOutlinePlusCircle } from 'react-icons/ai'
-import { BiDownvote, BiUpvote } from 'react-icons/bi'
+import React from 'react'
+import { AiFillLock, AiFillUnlock, AiOutlineDollarCircle, AiOutlinePlusCircle } from 'react-icons/ai'
+import { TiArrowDownOutline, TiArrowUpOutline, TiArrowDownThick, TiArrowUpThick } from 'react-icons/ti'
 
-export const LinkCard = ({link, setModalOpen, setLinkID}) => {
+export const LinkCard = ({link, setModalOpen, setLinkID, Vote}) => {
 
     return (
         <div className='grid-item link-item'>
@@ -13,7 +13,10 @@ export const LinkCard = ({link, setModalOpen, setLinkID}) => {
                 <div className='title'>{link && link.title}</div>
             </a>
 
-            <span onClick={() => {setModalOpen(true); setLinkID(link.id)}} className='add_to_folder'><AiOutlinePlusCircle className='mr-1'/></span>
+            <span onClick={() => {setModalOpen(true); setLinkID(link.id)}} className='add_to_folder'>
+                {link.is_private ? <AiFillLock className='mr-1'/> : <AiFillUnlock className='mr-1 hide'/>}
+                <AiOutlinePlusCircle className='add_to_folder_icon' />
+            </span>
 
             <div className='details'>
                 <div className='favicon'>
@@ -21,9 +24,17 @@ export const LinkCard = ({link, setModalOpen, setLinkID}) => {
                 </div>
                 <div className="counts flex justify-between items-center">
                     <div className="votes flex justify-start items-center">
-                        <BiUpvote className='text-md mx-1 curson-pointer'/>
+                        {link.my_vote && link.my_vote.type === 'up' ? (
+                            <TiArrowUpThick onClick={() => Vote(link.id, 'up')} className='text-md mx-1 curson-pointer'/>
+                        ) : (
+                            <TiArrowUpOutline onClick={() => Vote(link.id, 'up')} className='text-md mx-1 curson-pointer'/>
+                        )}
                         <span className='mx-1 bold'>{link.votes}</span>
-                        <BiDownvote className='text-md mx-1 curson-pointer'/>
+                        {link.my_vote && link.my_vote.type === 'down' ? (
+                            <TiArrowDownThick onClick={() => Vote(link.id, 'down')} className='text-md mx-1 curson-pointer'/>
+                        ) : (
+                            <TiArrowDownOutline onClick={() => Vote(link.id, 'down')} className='text-md mx-1 curson-pointer'/>
+                        )}
                     </div>
                     <div className="click_count flex justify-start items-center">
                         <AiOutlineDollarCircle className='text-md mx-1'/>

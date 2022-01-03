@@ -24,7 +24,9 @@ a {
     text-decoration: none;
     color: white;
 }
-
+.hide {
+    visibility: hidden;
+}
 
 .bg-green {
     background-color: #068057;

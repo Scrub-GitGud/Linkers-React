@@ -79,6 +79,24 @@ const LinkContextProvider = (props) => {
         }
     }
 
+    const Vote = async (id, type) => {
+        if(localStorage.tagers_token) {
+            setDefaultHeader(localStorage.tagers_token)
+        }
+        try {
+            const res = await axios.post('/link/vote', {id, type})
+            console.log(res)
+            if(res.data.success){
+                dispatch({type: "VOTE", payload: res.data.data})
+            } else {
+                console.log(res.data.message)
+                toast.error(res.data.message, { autoClose: 2000, position: toast.POSITION.TOP_CENTER});
+            }
+        } catch(err) {
+            console.log(err)
+            toast.error("Something went wrong.", { autoClose: 2000, position: toast.POSITION.TOP_CENTER});
+        }
+    }
 
     const GetFolders = async () => {
         if(localStorage.tagers_token) {
@@ -127,6 +145,7 @@ const LinkContextProvider = (props) => {
             add_loading: state.add_loading,
             GetLinks,
             AddLink,
+            Vote,
             GetFolders,
             AddFolder,
           }}

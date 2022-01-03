@@ -25,6 +25,11 @@ export const linkReducer = (state, action) => {
                 ...state,
                 folders: [...state.folders, action.payload]
             };
+        case "VOTE":
+            return {
+                ...state,
+                links: state.links.map(link => link.id === action.payload.id ? action.payload : link)
+            };
       default:
         return state;
     }
