@@ -17,7 +17,7 @@ export const LinkCard = ({link, setModalOpen, setLinkID, Vote}) => {
                 {link.is_private ? <AiFillLock className='mr-1'/> : <AiFillUnlock className='mr-1 hide'/>}
                 <AiOutlinePlusCircle className='add_to_folder_icon' />
             </span>
-
+            
             <div className='details'>
                 <div className='favicon'>
                     <img src={`https://s2.googleusercontent.com/s2/favicons?domain_url=${link.url}`} alt="" />

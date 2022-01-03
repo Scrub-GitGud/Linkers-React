@@ -5,11 +5,15 @@ import SearchBar from './SearchBar'
 
 const Dashboard = () => {
 
-    const {top_links, GetTopLinks} = useContext(LinkContext)
+    const {links, Search, Vote} = useContext(LinkContext)
     const [search_text, setSearchText] = useState('')
+
+    const [modal_open, setModalOpen] = useState(false)
+    const [link_id, setLinkID] = useState(null)
     
     useEffect(() => {
         console.log(search_text);
+        Search(search_text)
     }, [search_text])
     
     return (
@@ -18,7 +22,7 @@ const Dashboard = () => {
             <div className="my-2"><SearchBar search_text={search_text} setSearchText={setSearchText}/></div>
             
             <div className="grid">
-
+                {links && links.map(link => <LinkCard key={link.id} link={link} setLinkID={setLinkID} setModalOpen={setModalOpen} Vote={Vote}/>)}
             </div>
         </div>
     )

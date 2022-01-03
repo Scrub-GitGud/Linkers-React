@@ -17,12 +17,12 @@ const LinkContextProvider = (props) => {
     }
     const [state, dispatch] = useReducer(linkReducer, initialState)
 
-    const GetTopLinks = async (search_text) => {
+    const Search = async (search_text) => {
         if(localStorage.tagers_token) {
             setDefaultHeader(localStorage.tagers_token)
         }
         try {
-            const res = await axios.get('/link/top', {search_text})
+            const res = await axios.get('/link/search', {params: {search_text}})
             console.log(res)
             if(res.data.success){
                 dispatch({type: "GET_LINKS", payload: res.data.data})
@@ -143,6 +143,7 @@ const LinkContextProvider = (props) => {
             links: state.links,
             folders: state.folders,
             add_loading: state.add_loading,
+            Search,
             GetLinks,
             AddLink,
             Vote,
